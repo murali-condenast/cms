@@ -12,10 +12,19 @@ import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
 import "./Dashboard.scss";
 
+const sampleData = [
+    {Name: "01/02/2022", Count: 100},
+    {Name: "04/02/2022", Count: 76},
+    {Name: "05/02/2022", Count: 134},
+    {Name: "06/02/2022", Count: 34},
+    {Name: "09/02/2022", Count: 234}
+];
+
+const sampleAds = ["ad1"];
+
 const Dashboard = (props) => {
-    const [chartData, setChartData] = useState([]);
-    const [age, setAge] = React.useState('');
-    const [campaigns, setCampaigns] = useState([]);
+    const [chartData, setChartData] = useState(sampleData);    
+    const [campaigns, setCampaigns] = useState(sampleAds);
     const [currentCampaign, setCurrentCampaign] = useState("");
 
     const REGIONS_API = "http://127.0.0.1:5000/api/campaign"

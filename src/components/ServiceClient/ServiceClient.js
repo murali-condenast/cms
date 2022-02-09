@@ -5,14 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import DateRangeTwoToneIcon from '@mui/icons-material/DateRangeTwoTone';
-import GroupTwoToneIcon from '@mui/icons-material/GroupTwoTone';
-import CategoryTwoToneIcon from '@mui/icons-material/CategoryTwoTone';
-import FeaturedVideoTwoToneIcon from '@mui/icons-material/FeaturedVideoTwoTone';
-import MiscellaneousServicesTwoToneIcon from '@mui/icons-material/MiscellaneousServicesTwoTone';
-import DashboardTwoToneIcon from '@mui/icons-material/DashboardTwoTone';
 import { useNavigate } from "react-router-dom";
-import PostAddTwoToneIcon from '@mui/icons-material/PostAddTwoTone';
 import {SocialMediaIconsReact} from 'social-media-icons-react';
 
 const CardComponent = (props) => {
@@ -44,6 +37,8 @@ const SocialIcon = (props) => (
 
 const ServiceClient = (props) => {        
     const data = [
+        {title: "Email", icon: <SocialIcon name="mail"/> , link: ""},
+        {title: "SMS", icon: <SocialIcon name="send"/> , link: ""},
         {title: "Twitter", icon: <SocialIcon name="twitter"/> , link: ""},
         {title: "LinkedIn", icon: <SocialIcon name="linkedin"/> , link: ""},
         {title: "Instagram", icon: <SocialIcon name="instagram"/> , link: ""},
@@ -51,7 +46,8 @@ const ServiceClient = (props) => {
     ];
     return (
         <div className={"serviceClientContainer"}>
-            <h2>Social Media Integration</h2>
+            <h2>Client Service Integration</h2>
+            <h5>Login to use the service</h5>
             <Grid container spacing={2}>
                 {data && data.map((item, index) => 
                     <Grid item key={index}>
