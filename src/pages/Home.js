@@ -7,49 +7,54 @@ import { CardActionArea } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import ScreenSearchDesktopTwoToneIcon from '@mui/icons-material/ScreenSearchDesktopTwoTone';
 import AnalyticsTwoToneIcon from '@mui/icons-material/AnalyticsTwoTone';
-import DateRangeIcon from '@mui/icons-material/DateRange';
-
+import DateRangeTwoToneIcon from '@mui/icons-material/DateRangeTwoTone';
+import GroupTwoToneIcon from '@mui/icons-material/GroupTwoTone';
+import CategoryTwoToneIcon from '@mui/icons-material/CategoryTwoTone';
+import FeaturedVideoTwoToneIcon from '@mui/icons-material/FeaturedVideoTwoTone';
+import MiscellaneousServicesTwoToneIcon from '@mui/icons-material/MiscellaneousServicesTwoTone';
+import DashboardTwoToneIcon from '@mui/icons-material/DashboardTwoTone';
 import { useNavigate } from "react-router-dom";
 
-const Home = (props) => {
+const CardComponent = (props) => {
     let navigate = useNavigate();
+    const Icon = props.icon;
+    return (    
+        <Card sx={{ maxWidth: 345 }} onClick={()=>navigate(props.link)}>
+            <CardActionArea>
+                <div class="homeIconContainer">
+                    <Icon />
+                </div>
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    {props.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    {props.description}
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+        </Card>
+    )
+};
+
+const Home = (props) => {    
+    let navigate = useNavigate();    
+    const data = [
+        {title: "User", description: "Add, modify, delete users and roles", icon: GroupTwoToneIcon , link: "/user"},
+        {title: "Products", description: "Add, modify, delete products", icon: CategoryTwoToneIcon , link: "/products"},
+        {title: "Template Builder", description: "Add, modify, delete ad templates", icon: FeaturedVideoTwoToneIcon , link: "/template"},
+        {title: "Scheduler", description: "Schedule an advertisement in advance", icon: DateRangeTwoToneIcon, link: "/scheduler"},
+        {title: "Service Clients", description: "Email, SMS, POST Clients and API integrations", icon: MiscellaneousServicesTwoToneIcon, link: "/clients" },
+        {title: "Dashboard", description: "Access current campaigns, ad statistics, etc", icon: DashboardTwoToneIcon , link: "/dashboard"}
+    ];
     return (
         <div className={"homeContainer"}>
             <Grid container spacing={2}>
-                <Grid item>
-                    <Card sx={{ maxWidth: 345 }} onClick={()=>navigate("/scheduler")}>
-                        <CardActionArea>
-                            <div class="homeIconContainer">
-                                <DateRangeIcon/>
-                            </div>
-                            <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Scheduler
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Scheule an advertisement in advance
-                            </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid item>
-                    <Card sx={{ maxWidth: 345 }} onClick={()=>navigate("/analytics")}>
-                        <CardActionArea>
-                            <div class="homeIconContainer">
-                                <AnalyticsTwoToneIcon/>
-                            </div>
-                            <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Analytics
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Visualize policies bought regionwise per month.
-                            </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
+                {data && data.map((item, index) => 
+                    <Grid item key={index}>
+                        <CardComponent title={item.title}description={item.description} icon={item.icon} link={item.link}/>
+                    </Grid>
+                )}
             </Grid>
         </div>
     );

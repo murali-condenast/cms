@@ -21,14 +21,6 @@ const MenuProps = {
   },
 };
 
-const names = [
-  "Ad 1",
-  "Ad 2",
-  "Ad 3",
-  "Ad 4"
-
-];
-
 function getStyles(name, adName, theme) {
   return {
     fontWeight:
@@ -38,7 +30,7 @@ function getStyles(name, adName, theme) {
   };
 }
 
-export default function MultipleSelectChip() {
+export default function MultipleSelectChip(props) {
   const theme = useTheme();
   const [adName, setadName] = React.useState([]);
 
@@ -55,7 +47,7 @@ export default function MultipleSelectChip() {
   return (
     <div>
       <FormControl sx={{ m: 1, width: 400 }}>
-        <InputLabel id="demo-multiple-chip-label">Select Ad Template</InputLabel>
+        <InputLabel id="demo-multiple-chip-label">{props.title}</InputLabel>
         <Select          
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
@@ -72,7 +64,7 @@ export default function MultipleSelectChip() {
           )}
           MenuProps={MenuProps}
         >
-          {names.map((name) => (
+          {props.data.map((name) => (
             <MenuItem
               key={name}
               value={name}

@@ -7,6 +7,21 @@ import {
 } from "@aldabil/react-scheduler";
 import MultiSelectDropDown from "./components/MultiSelectDropDown";
 
+const adList = [
+  "Ad 1",
+  "Ad 2",
+  "Ad 3",
+  "Ad 4"
+];
+
+const platforms = [
+  "Email",
+  "SMS",
+  "LinkedIN",
+  "Facebook",
+  "Instagram"
+];
+
 interface CustomEditorProps {
   scheduler: SchedulerHelpers;
 }
@@ -67,7 +82,7 @@ const CustomEditor = ({ scheduler }: CustomEditorProps) => {
     <div>
       <div style={{ padding: "1rem" }}>
         <p>Schedule an Advertisement</p>
-        <div>
+        <div style={{ padding: "1rem" }}>
           <TextField
             label="Title"
             value={state.title}
@@ -77,7 +92,7 @@ const CustomEditor = ({ scheduler }: CustomEditorProps) => {
             fullWidth
           />
         </div>
-       <div>
+       <div style={{ padding: "1rem" }}>
         <TextField
             label="Description"
             value={state.description}
@@ -85,7 +100,8 @@ const CustomEditor = ({ scheduler }: CustomEditorProps) => {
             fullWidth
           />
        </div>        
-        <MultiSelectDropDown/>
+        <MultiSelectDropDown title="Templates" data={adList}/>
+        <MultiSelectDropDown title="Platforms" data={platforms}/>
       </div>
       <DialogActions>
         <Button onClick={scheduler.close}>Cancel</Button>

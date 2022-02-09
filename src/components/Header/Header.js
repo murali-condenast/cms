@@ -27,8 +27,6 @@ export default function ButtonAppBar() {
             Campaign Management System
           </Typography>
           <Button onClick={()=>navigate("/")}color="inherit">Home</Button>
-          <Button onClick={()=>navigate("/search")}color="inherit">Search</Button>
-          <Button onClick={()=>navigate("/analytics")}color="inherit">Analytics</Button>
         </Toolbar>
       </AppBar>
     </Box>
