@@ -13,6 +13,7 @@ import MiscellaneousServicesTwoToneIcon from '@mui/icons-material/MiscellaneousS
 import DashboardTwoToneIcon from '@mui/icons-material/DashboardTwoTone';
 import { useNavigate } from "react-router-dom";
 import PostAddTwoToneIcon from '@mui/icons-material/PostAddTwoTone';
+import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
 
 const CardComponent = (props) => {
     let navigate = useNavigate();
@@ -39,6 +40,7 @@ const CardComponent = (props) => {
 const Home = (props) => {        
     const data = [
         {title: "User", description: "Add, modify, delete users and roles", icon: GroupTwoToneIcon , link: "/user"},
+        {title: "Admin", description: "Add, modify, delete tenants and roles", icon: AdminPanelSettingsTwoToneIcon , link: "/admin"},
         {title: "Products", description: "Add, modify, delete products", icon: CategoryTwoToneIcon , link: "/products"},
         {title: "Template Builder", description: "Add, modify, delete ad templates", icon: FeaturedVideoTwoToneIcon , link: "/template"},
         {title: "Scheduler", description: "Schedule an advertisement in advance", icon: DateRangeTwoToneIcon, link: "/scheduler"},
