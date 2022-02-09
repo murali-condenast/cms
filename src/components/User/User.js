@@ -9,7 +9,8 @@ import {
 export default function BasicEditingGrid() {
   return (
     <div style={{ height: 400, padding: "1rem"}}>
-      <DataGrid rows={rows} columns={columns} />
+        <h2>Users</h2>
+        <DataGrid rows={rows} columns={columns} />
     </div>
   );
 }

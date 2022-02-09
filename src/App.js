@@ -13,6 +13,7 @@ import Header from "./components/Header";
 import TemplateBuilder from "./components/TemplateBuilder";
 import Dashboard from "./components/Dashboard";
 import AdPost from "./components/AdPost";
+import ServiceClient from "./components/ServiceClient";
 
 export default function App() {
   return(
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="template" element={<TemplateBuilder />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="adv" element={<AdPost />} />
+          <Route path="clients" element={<ServiceClient />} />
         </Routes>
       </BrowserRouter>
     </div>
