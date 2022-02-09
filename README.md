@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Ad campaign management system
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Smart way to publish advertisements
 
 ## Available Scripts
 
