@@ -14,6 +14,7 @@ import FeaturedVideoTwoToneIcon from '@mui/icons-material/FeaturedVideoTwoTone';
 import MiscellaneousServicesTwoToneIcon from '@mui/icons-material/MiscellaneousServicesTwoTone';
 import DashboardTwoToneIcon from '@mui/icons-material/DashboardTwoTone';
 import { useNavigate } from "react-router-dom";
+import PostAddTwoToneIcon from '@mui/icons-material/PostAddTwoTone';
 
 const CardComponent = (props) => {
     let navigate = useNavigate();
@@ -45,7 +46,8 @@ const Home = (props) => {
         {title: "Template Builder", description: "Add, modify, delete ad templates", icon: FeaturedVideoTwoToneIcon , link: "/template"},
         {title: "Scheduler", description: "Schedule an advertisement in advance", icon: DateRangeTwoToneIcon, link: "/scheduler"},
         {title: "Service Clients", description: "Email, SMS, POST Clients and API integrations", icon: MiscellaneousServicesTwoToneIcon, link: "/clients" },
-        {title: "Dashboard", description: "Access current campaigns, ad statistics, etc", icon: DashboardTwoToneIcon , link: "/dashboard"}
+        {title: "Dashboard", description: "Access current campaigns, ad statistics, etc", icon: DashboardTwoToneIcon , link: "/dashboard"},
+        {title: "Post advertisement", description: "Create and post ads to multiple platforms", icon: PostAddTwoToneIcon , link: "/adv"}
     ];
     return (
         <div className={"homeContainer"}>
