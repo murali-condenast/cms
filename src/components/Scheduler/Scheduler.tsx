@@ -117,8 +117,7 @@ function App() {
       customEditor={(scheduler) => <CustomEditor scheduler={scheduler} />}
       viewerExtraComponent={(fields, event) => {
         return (
-          <div>
-            <p>Useful to render custom fields...</p>
+          <div>            
             <p>Description: {event.description || "Nothing..."}</p>
           </div>
         );
